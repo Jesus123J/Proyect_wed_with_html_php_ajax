@@ -1,0 +1,389 @@
+:root {
+  --orange-400: #ff673d;
+  --orange-700: #c61308;
+  --yellow-500: #eab308;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  background-color: #f5ebdc;
+  min-height: 100vh;
+}
+
+.complaints-form,
+.suggestions-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 50%;
+  min-height: 80vh;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #b0b0b0 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #b0b0b0;
+}
+
+/* ------------------------------- 404 not found --------------------------- */
+.container-404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-height: 100vh;
+  max-width: 100vw;
+}
+
+.container-404 img {
+  max-width: 500px;
+  max-height: 500px;
+}
+
+.container-404 h1 {
+  margin-top: -50px;
+}
+
+/* -------------------------------Header Client--------------------------- */
+.header-c {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  background-color: #f5ebdc;
+  z-index: 1;
+}
+
+.header-c .shopping-cart {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.header-c .active {
+  color: var(--orange-400) !important;
+  border-bottom: 3px solid var(--orange-400);
+  padding-bottom: 4px;
+}
+
+.header-c #btn-cart {
+  color: #ff9971;
+  font-size: 40px;
+}
+
+.header-c #btn-cart:hover {
+  stroke: var(--orange-400);
+  cursor: pointer;
+}
+
+.header-c .btn-icon {
+  color: rgba(0, 0, 0, 0.55);
+  font-size: 1.688rem;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.icon-menu {
+  color: rgba(0, 0, 0, 0.55);
+  font-size: 1.688rem;
+  cursor: pointer;
+}
+
+.icon-logout {
+  font-size: 1.688rem;
+  cursor: pointer;
+  padding: 5px;
+}
+
+@media (max-width: 520px) {
+  .header-c > div:first-child {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+/* -------------------------------Cart List--------------------------- */
+
+#cart-list-items > div img {
+  object-fit: cover;
+  max-height: 100px;
+  min-width: 100px;
+}
+
+#cart-list-items {
+  overflow-x: hidden;
+}
+
+#total-price-order,
+.nav-total-price {
+  width: max-content;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.5s ease;
+}
+
+.slide-in {
+  animation: slide-in 0.5s ease;
+}
+
+/* -------------------------------Auth Register--------------------------- */
+.logo-register-container {
+  max-width: 500px;
+  max-height: 500px;
+}
+
+.gif-modal {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+/* -------------------------------Products Client--------------------------- */
+
+.products-client {
+  min-height: 100vh;
+  margin-bottom: 4em;
+}
+
+.section-product {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.section-product h1 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.section-product .container-products {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* -------------------------------Frequent Questions--------------------------- */
+
+.frequent-quetions-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 4em;
+}
+
+.frequent-quetions-main h1 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.accordion-container {
+  align-self: center;
+  width: 50%;
+  border-radius: 4px;
+}
+
+.accordion-container .contentBx {
+  position: relative;
+  margin: 10px 20px;
+}
+
+.accordion-container .contentBx .label {
+  position: relative;
+  padding: 10px;
+  background: var(--yellow-500);
+  color: white;
+  cursor: pointer;
+  margin: 0;
+  font-size: 1.4em;
+}
+
+.accordion-container .contentBx .label::before {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-55%);
+  font-size: 1em;
+}
+
+.accordion-container .contentBx .content {
+  position: relative;
+  background-color: white;
+  height: 0;
+  overflow: hidden;
+  transition: 0.3s;
+  overflow-y: auto;
+}
+
+.accordion-container .active .content {
+  height: max-content;
+  padding: 10px 20px;
+}
+
+.accordion-container .contentBx .content ul {
+  margin: 0 !important;
+}
+
+.accordion-container .active .label::before {
+  content: "-";
+}
+
+@media (max-width: 768px) {
+  .accordion-container {
+    width: 100%;
+  }
+}
+
+/* -------------------------------Footer--------------------------- */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3em;
+  gap: 20px;
+  background-color: var(--orange-400);
+  color: white;
+  font-weight: bold;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #eab308;
+}
+
+/*-------------------------------Login------------------------*/
+.login-form {
+  background-image: url("../img/login.png");
+  display: flex;
+  justify-content: center; /*CENTRAR AL MEDIO DE ANCHO*/
+  align-items: center; /*CENTRAR AL MEDIO DE ALTURA*/
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat; /*NO REPETIR LA IMAGEN*/
+}
+.login-box {
+  background-color: transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 30%;
+}
+.login-box .input-box {
+  justify-items: center;
+  margin: 10px 0;
+  position: relative;
+}
+.login-box h1 {
+  color: var(--orange-400);
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.input-box svg {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.login-box .btn-login {
+  background-color: var(--orange-400);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 1em;
+}
+.login-box .btn-login:hover {
+  background-color: var(--orange-700);
+}
+
+.login-box .login-register {
+  margin-top: 20px;
+  font-weight: 400;
+  letter-spacing: 0.7px;
+  color: white;
+}
+
+.login-box .register-link {
+  color: var(--orange-400);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-box .register-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .login-box {
+    width: 100%;
+  }
+}
+
+/*-------------------------------Sidebar Client------------------------*/
+
+@media (width < 992px) {
+  .aside-client {
+    width: 100% !important;
+  }
+}

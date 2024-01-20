@@ -1,0 +1,295 @@
+/* =============== Globals ============== */
+
+:root {
+  --background: #fefefe;
+  --black1: #222;
+  --black2: #999;
+}
+
+body {
+  display: flex;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 1;
+  width: 80%;
+  max-height: 100vh;
+  overflow: auto;
+  background-color: var(--background);
+  z-index: 1;
+}
+
+/* =============== Navigation ================ */
+.navigation {
+  width: 20%;
+  min-height: 100vh;
+  max-height: 100vh;
+  background: #343541;
+  transition: width 0.5s;
+  position: relative;
+}
+
+.navigation .ti-circle-arrow-left-filled {
+  position: absolute;
+  top: 55px;
+  right: -12px;
+  font-size: 2.5rem;
+  color: #ed672f;
+  cursor: pointer;
+  background-color: #343541;
+  border-radius: 50%;
+  z-index: 3;
+  transition: 0.5s;
+}
+
+.navigation .ti-circle-arrow-left-filled.active {
+  transform: rotate(180deg);
+}
+
+.navigation.active {
+  width: 60px;
+}
+
+.navigation ul li {
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  position: relative;
+}
+
+.navigation ul li a:hover {
+  color: #a5a4a4;
+}
+
+.navigation ul li:nth-child(1) {
+  margin-bottom: 20px;
+  pointer-events: none;
+}
+
+.navigation ul li a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.navigation .icon {
+  text-align: center;
+  font-size: 1.75rem;
+  color: #c3c3c3;
+}
+
+.navigation ul li a .title {
+  padding: 0 15px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+  font-weight: 500 !important;
+}
+
+.navigation ul li a.active :where(.icon, span) {
+  color: #ed672f;
+}
+
+#nav-mobile .nav-link.active {
+  background-color: #ed672f;
+  color: white;
+  border-radius: 8px;
+}
+
+/* ===================== Main ===================== */
+
+.status.delivered {
+  padding: 2px 4px;
+  background: #8de02c;
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.status.pending {
+  padding: 2px 4px;
+  background: #e9b10a;
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.status.return {
+  padding: 2px 4px;
+  background: #f00;
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.status.inProgress {
+  padding: 2px 4px;
+  background: #1795ce;
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .status.inProgress {
+    white-space: nowrap;
+  }
+}
+
+@media (width < 1300px) {
+  .navigation {
+    width: 60px;
+  }
+  .navigation.active {
+    width: 300px;
+  }
+
+  .navigation .ti-circle-arrow-left-filled {
+    transform: rotate(180deg);
+  }
+}
+
+/*-----------------Frequent Questions------------------*/
+.icon-btn {
+  font-size: 1.5rem;
+  color: var(--black2);
+  cursor: pointer;
+}
+
+table tr td:nth-last-child(2) .icon-btn:hover {
+  border: 2px solid #1d4ed8;
+  border-radius: 50%;
+  padding: 3px;
+  color: #1d4ed8;
+}
+
+table tr td:last-child .icon-btn:hover {
+  border: 2px solid #b91c1c;
+  border-radius: 50%;
+  padding: 3px;
+  color: #b91c1c;
+}
+
+#table-top-products tr td:nth-child(2) {
+  text-align: start;
+}
+
+#productTableBody tr td:last-child .icon-btn:hover{
+  border: 2px solid #1d4ed8;
+  border-radius: 50%;
+  padding: 3px;
+  color: #1d4ed8;
+}
+
+#select-frequent-questions {
+  width: 30%;
+  min-width: 150px;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.iconDashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  cursor: pointer;
+  max-width: 70px;
+  width: 70px;
+  max-height: 70px;
+  height: 70px;
+  border-radius: 8px;
+}
+
+.stats .d-flex {
+  background-color: #fff;
+}
+
+.stats .d-flex:first-child .iconDashboard {
+  color: #ed672f;
+  background-color: #fdba74;
+  border: 1px solid #ed672f;
+}
+
+.stats .d-flex:first-child:hover {
+  background-color: #fdba74;
+  color: white;
+}
+
+.stats .d-flex:nth-child(2) .iconDashboard {
+  color: #1d4ed8;
+  background-color: #a0cfff;
+  border: 1px solid #1d4ed8;
+}
+
+.stats .d-flex:nth-child(2):hover {
+  background-color: #a0cfff;
+  color: white;
+}
+
+.stats .d-flex:nth-child(3) .iconDashboard {
+  color: #6d28d9;
+  background-color: #a78bfa;
+  border: 1px solid #6d28d9;
+}
+
+.stats .d-flex:nth-child(3):hover {
+  background-color: #a78bfa;
+  color: white;
+}
+
+.stats .d-flex:nth-child(4) .iconDashboard {
+  color: #15803d;
+  background-color: #4ade80;
+  border: 1px solid #15803d;
+}
+
+.stats .d-flex:nth-child(4):hover {
+  background-color: #4ade80;
+  color: white;
+}
+
+.ti.ti-menu-2.fs-1 {
+  cursor: pointer;
+}
+.ti.ti-menu-2.fs-1:hover {
+  color: #1d4ed8;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #b0b0b0 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #b0b0b0;
+}
+
+hr {
+  margin: 0;
+  color: white;
+}
